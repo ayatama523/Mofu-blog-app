@@ -1,0 +1,138 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  Exclude:
+    - Gemfile
+    - 'bin/**/*'
+    - 'db/migrate/*'
+    - 'db/schema.rb'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+  TargetRubyVersion: 2.7
+  DisplayCopNames: true
+  NewCops: enable
+
+Layout/LineLength:
+  Enabled: false
+
+Lint/MissingCopEnableDirective:
+  Enabled: false
+
+Lint/MissingSuper:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Naming/MethodParameterName:
+  Enabled: false
+
+Naming/VariableNumber:
+  EnforcedStyle: snake_case
+
+Rails/InverseOf:
+  Enabled: false
+
+Rails/OutputSafety:
+  Exclude:
+    - 'app/views/kaminari/**/*'
+
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
+
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - test
+    - production
+    - staging
+    - sandbox
+
+RSpec/AnyInstance:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/DescribeClass:
+  Exclude:
+    - 'spec/lib/tasks/**/*'
+
+RSpec/BeforeAfterAll:
+  Exclude:
+    - 'spec/lib/tasks/**/*'
+
+RSpec/InstanceVariable:
+  Exclude:
+    - 'spec/lib/tasks/**/*'
+
+RSpec/HookArgument:
+  Exclude:
+    - 'spec/lib/tasks/**/*'
+
+Style/AndOr:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FormatStringToken:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/NestedParenthesizedCalls:
+  Enabled: false
+
+Style/RescueModifier:
+  Exclude:
+    - 'spec/**/*'
+
+Style/SymbolProc:
+  Exclude:
+    - 'config/**/*'
+
+Style/TrailingCommaInArguments:
+  Enabled: false
