@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users, path: :admin_users, controllers: {
+    sessions: 'admin/users/sessions',
+    passwords: 'admin/users/passwords',
+    confirmations: 'admin/users/confirmations',
+    unlocks: 'admin/users/unlocks',
+    registrations: 'admin/users/registrations'
+  }, path_names: {
+    sign_in: 'login',
+    sign_out: 'logout'
+  }
+  namespace :admin do
+    root "home#index"
+  end
 end

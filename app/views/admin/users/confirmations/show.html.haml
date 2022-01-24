@@ -1,0 +1,20 @@
+.text-left
+  %h1.text-gray-900.mb-4.auth-title パスワード設定
+  .auth-description-wrapper
+    %p.auth-description
+      ログインに利用するパスワードを入力してください。
+  %p.auth-email-label
+    メールアドレス
+  %p.auth-email
+    = @email
+= form_for resource, as: resource_name, url: user_confirmation_path(), html: { method: :patch }, class: 'form' do |f|
+  = render 'devise/shared/error_messages', resource: resource
+  = hidden_field_tag :confirmation_token, params[:confirmation_token]
+  .form-group
+    = f.label :password, t('views.placeholder.new_password')
+    = f.password_field :password, autofocus: true, autocomplete: 'new-password', class: 'form-control auth-text-input'
+  .form-group
+    = f.label :password_confirmation, t('views.placeholder.confirm_password')
+    = f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form-control auth-text-input'
+  .form-group
+    = f.submit '上記の内容で設定', class: 'btn btn-primary auth-submit-btn'

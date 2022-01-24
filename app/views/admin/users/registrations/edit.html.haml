@@ -1,0 +1,17 @@
+.text-left
+  %h1.text-gray-900.mb-4.auth-title= t('devise.passwords.edit.change_my_password')
+= form_for resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, class: 'form' do |f|
+  = render 'admin/users/shared/error_messages', resource: resource
+  .form-group.mb-3
+    = f.label :current_password
+    = f.password_field :current_password, autocomplete: 'current-password', class: 'form-control auth-text-input'
+  .form-group.mb-3
+    = f.label :password
+    = f.password_field :password, autocomplete: 'new-password', class: 'form-control auth-text-input'
+  .form-group.mb-3
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form-control auth-text-input'
+  .form-group.mb-3
+    = f.submit t('devise.passwords.edit.change_my_password'), class: 'btn btn-primary auth-submit-btn'
+%a.auth-back-text{ href: "/" }
+  ホームに戻る

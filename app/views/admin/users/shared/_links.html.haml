@@ -1,0 +1,6 @@
+- if controller_name != 'sessions'
+  .form-group.mb-3
+    = link_to t('devise.sessions.new.sign_in'), new_session_path(resource_name)
+- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+  .form-group.mb-3
+    = link_to t('devise.shared.links.forgot_your_password'), new_password_path(resource_name)

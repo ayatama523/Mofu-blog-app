@@ -1,0 +1,9 @@
+Oiwaiiに仮登録いただき、ありがとうございます！<br />
+<br />
+引き続き、下記の「認証URL」をクリックして、本登録のお手続きをお願いいたします。<br />
+<br />
+<%= link_to user_confirmation_url(@resource, confirmation_token: @token, host: "#{@subdomain}.#{Hostname.server_host_with_port}", protocol: Hostname.protocol), confirmation_url(@resource, confirmation_token: @token, host: "#{@subdomain}.#{Hostname.server_host_with_port}", protocol: Hostname.protocol) %><br />
+<br />
+※「認証URL」をクリックしてもログイン画面が表示されない場合は、URLをコピーし、ブラウザのアドレス欄に貼り付けてください。<br />
+※本メールにお心当たりがない場合は、 info@concept-marry.com までお知らせください。<br />
+※本登録後、ご登録のメールアドレスとパスワードでログインが可能です。<br />

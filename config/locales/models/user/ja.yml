@@ -1,0 +1,41 @@
+---
+ja:
+  activerecord:
+    attributes:
+      user:
+        email: メールアドレス
+        confirmation_sent_at: パスワード確認送信時刻
+        confirmation_token: パスワード確認用トークン
+        confirmed_at: パスワード確認時刻
+        current_sign_in_at: 現在のログイン時刻
+        current_sign_in_ip: 現在のログインIPアドレス
+        email: メールアドレス
+        online_url: オンラインURL
+        encrypted_password: 暗号化パスワード
+        failed_attempts: 失敗したログイン試行回数
+        id: Id
+        last_sign_in_at: 最終ログイン時刻
+        last_sign_in_ip: 最終ログインIPアドレス
+        locked_at: ロック時刻
+        meet_in: meet in URL
+        name: 名前
+        permission_type: 権限
+        hall_id: 所属会場
+        remember_created_at: ログイン記憶時刻
+        reset_password_sent_at: パスワードリセット送信時刻
+        reset_password_token: パスワードリセット用トークン
+        sign_in_count: ログイン回数
+        unconfirmed_email: 未確認Eメール
+        unlock_token: ロック解除用トークン
+        can_appointment: 新規接客可能
+        can_dress_coordination: 衣装接客可能
+        schedulable_priority: 予約優先順位
+    models:
+      user: ユーザ
+  enumerize:
+    user:
+      permission_type:
+        admin: 管理者
+        editor: 編集者
+        reviewer: レビュー
+        commenter: コメント

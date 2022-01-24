@@ -1,0 +1,10 @@
+<%= @resource.email %>様<br/>
+<br/>
+サインインに失敗した回数が多すぎるため、アカウントがロックされました。<br/>
+アカウントのロックを解除するためには、以下のリンクをクリックしてください。<br/>
+<br/>
+<%= link_to user_unlock_url(@resource, unlock_token: @token, host: "#{@subdomain}.#{Hostname.server_host_with_port}", protocol: Hostname.protocol), unlock_url(@resource, unlock_token: @token, host: "#{@subdomain}.#{Hostname.server_host_with_port}", protocol: Hostname.protocol) %><br/>
+<br/>
+上記URLの有効期限は、このメール送信後24時間です。<br/>
+URLをクリックしてもパスワード変更画面が表示されない場合は、<br/>
+URLをコピーし、ブラウザのアドレス欄にペースト（貼り付け）してください。

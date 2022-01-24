@@ -1,0 +1,10 @@
+.text-left
+  %h1.text-gray-900.mb-4.auth-title= t('devise.confirmations.new.resend_confirmation_instructions')
+= form_for resource, as: resource_name, url: user_confirmation_path(), html: { method: :post }, class: 'form' do |f|
+  = render 'admin/users/shared/error_messages', resource: resource
+  .form-group.mb-3
+    = f.label :email
+    = f.email_field :email, autofocus: true, autocomplete: 'email', value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: 'form-control auth-text-input'
+  .form-group.mb-3
+    = f.submit t('devise.confirmations.new.resend_confirmation_instructions'), class: 'btn btn-primary auth-submit-btn'
+  = render 'admin/users/shared/links'
