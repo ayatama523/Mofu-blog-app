@@ -2,12 +2,12 @@
 
 Rails.application.configure do
   if Rails.env.development?
-    config.action_mailer.default_url_options = {  host: 'localhost', port: 3000 }
+    config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
-      address:"smtp.gmail.com",
+      address: 'smtp.gmail.com',
       domain: 'gmail.com',
-      port:587,
+      port: 587,
       user_name: ENV.fetch('GMAIL_USERNAME').to_s,
       password: ENV.fetch('GMAIL_PASSWORD').to_s,
       authentication: :login
