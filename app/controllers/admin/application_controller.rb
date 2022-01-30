@@ -13,7 +13,7 @@ class Admin::ApplicationController < ActionController::Base
   helper_method :action_policy
 
   def action_policy(controller = controller_path)
-    dirs = controller.to_s.split('/').reject(&:blank?)
+    dirs = controller.to_s.split('/').compact_blank
     policy(dirs.join('/').to_sym)
   rescue Pundit::NotDefinedError
     policy(:'admin/application')

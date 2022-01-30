@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   devise_for :users, path: :admin_users, controllers: {
     sessions: 'admin/users/sessions',
@@ -10,6 +12,6 @@ Rails.application.routes.draw do
     sign_out: 'logout'
   }
   namespace :admin do
-    root "home#index"
+    root 'home#index'
   end
 end
