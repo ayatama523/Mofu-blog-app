@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   }
   namespace :admin do
     root 'home#index'
+    resources :categories, only: %i[index new]
   end
 end
