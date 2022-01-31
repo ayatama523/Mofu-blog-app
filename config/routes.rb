@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   }
   namespace :admin do
     root 'home#index'
-    resources :categories, only: %i[index new]
+    resources :categories, only: %i[index new create destroy edit update]
   end
 end
