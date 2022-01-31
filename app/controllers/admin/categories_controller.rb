@@ -11,7 +11,7 @@ class Admin::CategoriesController < Admin::ApplicationController
     @category = Category.new
   end
 
-  def create 
+  def create
     @category = Category.new(category_params)
     if @category.save
       flash[:success] = t('.success')
@@ -54,5 +54,4 @@ class Admin::CategoriesController < Admin::ApplicationController
       :name
     )
   end
-
 end
