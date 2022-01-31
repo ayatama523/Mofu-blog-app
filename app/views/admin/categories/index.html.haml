@@ -2,3 +2,19 @@
 = link_to new_admin_category_path, class: 'btn btn-secondary' do
   %i.fa.fa-fw.fa-plus
   = '追加'
+%table
+  %thead
+    %tr
+      %th= Category.human_attribute_name :name
+      %th= t('views.admin.action.edit')
+      %th= t('views.admin.action.destroy')
+  %tbody
+    - @categories.each do |category|
+      %tr
+        %td= category.name
+        %td
+          = link_to edit_admin_category_path(category) do
+            %i.fas.fa-fw.fa-edit
+        %td
+          = button_to admin_category_path(category), method: :delete do
+            %i.fas.fa-fw.fa-trash
