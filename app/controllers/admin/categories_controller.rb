@@ -9,6 +9,7 @@ class Admin::CategoriesController < Admin::ApplicationController
 
   def new
     @category = Category.new
+    @categories = Category.all
   end
 
   def create
@@ -34,6 +35,7 @@ class Admin::CategoriesController < Admin::ApplicationController
 
   def edit
     @category = Category.find(params[:id])
+    @categories = Category.all
   end
 
   def update
@@ -51,7 +53,7 @@ class Admin::CategoriesController < Admin::ApplicationController
 
   def category_params
     params.require(:category).permit(
-      :name
+      :name, :category_id
     )
   end
 end
