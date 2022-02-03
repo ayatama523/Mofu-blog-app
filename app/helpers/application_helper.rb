@@ -2,7 +2,7 @@
 
 module ApplicationHelper
   def category_options(categories)
-    return if categories.blank?
+    return [] if categories.blank?
 
     categories.map do |category|
       [category.name, category.id]

@@ -5,7 +5,7 @@
 .form-group.row
   = f.label :parent
   .col-md-10
-  = f.select :category_id, category_options(options), { include_blank: true }, class: 'form-select', required: true
+  = f.select :category_id, category_options(options), { include_blank: true }, class: 'form-select'
 .form-group.row
   .offset-md-2.col-md-10
     - if f.object.new_record?
