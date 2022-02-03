@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_30_144108) do
+ActiveRecord::Schema.define(version: 2022_02_02_141414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -22,6 +22,18 @@ ActiveRecord::Schema.define(version: 2022_01_30_144108) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_categories_on_category_id"
+  end
+
+  create_table "posts", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "title", null: false
+    t.text "content_html"
+    t.text "content_json"
+    t.uuid "creator_id", null: false
+    t.uuid "category_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_posts_on_category_id"
+    t.index ["creator_id"], name: "index_posts_on_creator_id"
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -52,4 +64,6 @@ ActiveRecord::Schema.define(version: 2022_01_30_144108) do
   end
 
   add_foreign_key "categories", "categories"
+  add_foreign_key "posts", "categories"
+  add_foreign_key "posts", "users", column: "creator_id"
 end
