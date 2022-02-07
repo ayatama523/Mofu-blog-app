@@ -40,6 +40,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :timeoutable, :trackable
 
+  has_many :posts, foreign_key: :creator_id, dependent: :destroy
+
   extend Enumerize
   enumerize :permission_type, in: %i[
     admin
