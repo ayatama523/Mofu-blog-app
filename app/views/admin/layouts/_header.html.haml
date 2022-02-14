@@ -1,6 +1,6 @@
 %header.header.fixed-top.bg-primary
-  %nav.navbar.navbar-expand-lg.navbar-dark
-    = link_to 'Mofublog', admin_root_path, class: 'navbar-brand ml-3'
+  %nav.navbar.navbar-expand-lg.navbar-dark.py-0
+    = link_to 'Mofublog', admin_root_path, class: 'navbar-brand ms-3'
     %button.navbar-toggler{ 'aria-controls': 'navbarSupportedContent', 'aria-expanded': 'false', 'aria-label': 'Toggle navigation', 'data-bs-target': '#navbarSupportedContent', 'data-bs-toggle': 'collapse', type: 'button' }
       %span.navbar-toggler-icon
     .collapse.navbar-collapse#navbarSupportedContent.float-end
@@ -28,6 +28,6 @@
                 %i.fas.fa-user-cog
                 = '自分の設定'
             %li
-              = link_to destroy_user_session_path, class: 'dropdown-item' do
+              = link_to destroy_user_session_path, class: 'dropdown-item', method: :delete do
                 %i.fas.fa-power-off
                 = 'ログアウト'

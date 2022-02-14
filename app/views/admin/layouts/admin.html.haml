@@ -10,7 +10,7 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'admin/index', 'data-turbolinks-track': 'reload'
     = favicon_link_tag('favicon.ico')
-  %body
+  %body.admin-page
     = render 'admin/layouts/header'
     %main.container
       = yield

@@ -9,7 +9,7 @@ class Admin::Users::SessionsController < Devise::SessionsController
     admin_root_path
   end
 
-  # def after_sign_out_path_for(_resource)
-  #   crm_root_path
-  # end
+  def after_sign_out_path_for(_resource)
+    admin_root_path
+  end
 end
