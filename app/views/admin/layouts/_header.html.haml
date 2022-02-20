@@ -1,0 +1,33 @@
+%header.header.fixed-top.bg-primary
+  %nav.navbar.navbar-expand-lg.navbar-dark.py-0
+    = link_to 'Mofublog', admin_root_path, class: 'navbar-brand ms-3'
+    %button.navbar-toggler{ 'aria-controls': 'navbarSupportedContent', 'aria-expanded': 'false', 'aria-label': 'Toggle navigation', 'data-bs-target': '#navbarSupportedContent', 'data-bs-toggle': 'collapse', type: 'button' }
+      %span.navbar-toggler-icon
+    .collapse.navbar-collapse#navbarSupportedContent.float-end
+      %ul.navbar-nav.me-auto
+        %li.nav-item.dropdown 
+          %a.nav-item.nav-link.dropdown-toggle.mr-md-2#navbarPosts{ 'aria-expanded': 'false', 'aria-haspopup': 'true', 'data-bs-toggle': 'dropdown', href: '#' }
+            投稿
+          %ul.dropdown-menu{ 'aria-labelledby': 'navbarPosts' }
+            %li 
+              = link_to admin_posts_path, class: 'dropdown-item' do
+                %i.fas.fa-user-cog
+                = '一覧'
+            %li
+              = link_to '#', class: 'dropdown-item' do
+                %i.fas.fa-power-off
+                = '新規'
+      %ul.navbar-nav
+        %li.nav-item.dropdown
+          %a.nav-item.nav-link.dropdown-toggle.mr-md-2#navbarUserSetting{ 'aria-expanded': 'false', 'aria-haspopup': 'true', 'data-bs-toggle': 'dropdown', href: '#' }
+            %i.fas.fa-cog
+            = current_user.email 
+          %ul.dropdown-menu{ 'aria-labelledby': 'navbarUserSetting' }
+            %li 
+              = link_to admin_root_path, class: 'dropdown-item' do
+                %i.fas.fa-user-cog
+                = '自分の設定'
+            %li
+              = link_to destroy_user_session_path, class: 'dropdown-item', method: :delete do
+                %i.fas.fa-power-off
+                = 'ログアウト'

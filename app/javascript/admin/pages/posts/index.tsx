@@ -1,5 +1,4 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
 
 type Props = any
 
@@ -11,4 +10,4 @@ const Posts: React.FC<Props> = (props) => {
   )
 }
 
-export default withRouter(Posts)
+export default Posts

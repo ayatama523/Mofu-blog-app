@@ -5,6 +5,7 @@
 # Table name: posts
 #
 #  id           :uuid             not null, primary key
+#  content_css  :text
 #  content_html :text
 #  content_json :text
 #  title        :string           not null

@@ -1,15 +1,19 @@
 import React from "react"
 import ReactDOM from "react-dom"
-// import moment from "moment"
 
-import App from "./App"
+import PostsEdit from "./pages/posts/edit"
 
-// moment.locale("ja")
-
-document.addEventListener("DOMContentLoaded", () => {
-  const el = document.getElementById("admin-pages")
-  if (el !== null) {
-    const config = JSON.parse(el.dataset.config || "{}")
-    ReactDOM.render(<App config={config} />, el)
+document.addEventListener("turbolinks:load", () => {
+  const postsEdit = document.getElementById("admin-posts-edit")
+  if (postsEdit) {
+    const dataset = (postsEdit as HTMLElement).dataset
+    const config = JSON.parse(dataset.config || "{}")
+    ReactDOM.render(
+      <PostsEdit
+        config={config}
+        postId={dataset.postId}
+      />,
+      postsEdit
+    )
   }
-})
+});
