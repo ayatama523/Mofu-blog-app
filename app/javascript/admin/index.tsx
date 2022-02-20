@@ -11,6 +11,7 @@ document.addEventListener("turbolinks:load", () => {
     ReactDOM.render(
       <PostsEdit
         config={config}
+        postId={dataset.postId}
       />,
       postsEdit
     )

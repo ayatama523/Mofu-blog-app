@@ -8,6 +8,7 @@ class Admin::PostsController < Admin::ApplicationController
   end
 
   def edit
-    @posts = Post.find(params[:id])
+    @post = Post.find(params[:id])
+    @no_container = true
   end
 end

@@ -15,5 +15,9 @@ Rails.application.routes.draw do
     root 'home#index'
     resources :categories, only: %i[index new create destroy edit update]
     resources :posts, only: %i[index edit new]
+
+    namespace :api do
+      resources :posts, only: %i[show update]
+    end
   end
 end

@@ -12,5 +12,5 @@
     = favicon_link_tag('favicon.ico')
   %body.admin-page
     = render 'admin/layouts/header'
-    %main.container
+    %main{class: (!@no_container && 'container')} 
       = yield
